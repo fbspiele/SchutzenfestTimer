@@ -65,7 +65,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                     myCalendar.update();
                     switch (benachrichtigungsTyp){
                         case MainActivity.NOTIFICATION_TYPE_TAGE:{
-                            createNotification(context,myCalendar.getName(),myCalendar.getNochSchlafenText(context,false) + " ( . Y . )");
+                            createNotification(context,myCalendar.getName(),myCalendar.getNochSchlafenText(context,false));
                             break;
                         }
                         case MainActivity.NOTIFICATION_TYPE_STUNDEN:{
@@ -74,7 +74,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                                 contentText = "nur noch "+benachrichtigungsTypValue + " stunden";
                             }
                             else {
-                                contentText = "vor "+benachrichtigungsTypValue + " sekunden";
+                                contentText = "vor "+Math.abs(benachrichtigungsTypValue) + " sekunden";
                             }
                             createNotification(context,myCalendar.getName(),contentText);
                             break;
@@ -85,7 +85,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                                 contentText = "nur noch "+benachrichtigungsTypValue + " mit nutten ( . Y . )";
                             }
                             else {
-                                contentText = "vor "+benachrichtigungsTypValue + " mit nutten ( . Y . )";
+                                contentText = "vor "+Math.abs(benachrichtigungsTypValue) + " mit nutten ( . Y . )";
                             }
                             createNotification(context,myCalendar.getName(),contentText);
                             break;
@@ -96,7 +96,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                                 contentText = "nur noch "+benachrichtigungsTypValue + " sekunden";
                             }
                             else {
-                                contentText = "vor "+benachrichtigungsTypValue + " sekunden";
+                                contentText = "vor "+Math.abs(benachrichtigungsTypValue) + " sekunden";
                             }
                             createNotification(context,myCalendar.getName(),contentText);
                             break;
