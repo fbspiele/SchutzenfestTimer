@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
     public static List<MyCalendar> myCalendarList = new ArrayList<>();
 
-
     public static List<MyBenachrichtigung> myStandardBenachrichtigungList = new ArrayList<>();
 
     public static List<MyCalendar> myAngezeigteCalendarList = new ArrayList<>();
@@ -164,9 +163,6 @@ public class MainActivity extends AppCompatActivity {
     //quick settings tile
 
     //TODO hier weitermachen
-    //TODO uhr bei benachrichtigungeneinstellung größer machen
-    //TODO getschlafetext funktioniert manchmal ned weil des mit dem context ned hinhaut (war als ich die app zugemacht hab, vielleicht weil das runnable fürs updaten dann noch läuft aber des context nimmer geht dann versuchts des upzudaten und hat ne nullpointerexception)
-                //glaub jetzt hab ich s behoben ma a weng verfolgen
     // TODO stunden, minuten, sekunden notifications testen
     // jahre monate wochen einbauen
     // unterscheiden zwischen standardnotifications und standardnotifications für individuelle events
@@ -226,6 +222,9 @@ public class MainActivity extends AppCompatActivity {
 
         myCalendarList = new ArrayList<>();
         Log.w("MainActivity", "reset of myCalendarList");
+
+
+        // gottes geburtstag
         Calendar meinGeburtstag = getInstance();
         meinGeburtstag.set(1993, Calendar.JULY, 2, 18, 4);
         MyCalendar geburtGottes = new MyCalendar(meinGeburtstag, meinGeburtstag, "geburt gottes");
@@ -236,6 +235,37 @@ public class MainActivity extends AppCompatActivity {
         MyBenachrichtigung hundertMillionenSekBenachrichtigung = new MyBenachrichtigung("alle 100.000.000 sekunden",NOTIFICATION_TYPE_SEKUNDEN,true,true,true,12,0,conditionen);
         geburtGottes.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
         myCalendarList.add(geburtGottes);
+
+        // gehrer milena standesamtliche hochzeit
+        Calendar gehrerMilenaHochzeitStandesamtlichAnfang = getInstance();
+        gehrerMilenaHochzeitStandesamtlichAnfang.set(2021, Calendar.MAY, 22, 10, 0);
+        Calendar gehrerMilenaHochzeitStandesamtlichEnde = getInstance();
+        gehrerMilenaHochzeitStandesamtlichEnde.set(2021, Calendar.MAY, 22, 18, 0);
+        MyCalendar gehrerMilenaStandesamtlichHochzeit = new MyCalendar(gehrerMilenaHochzeitStandesamtlichAnfang, gehrerMilenaHochzeitStandesamtlichEnde, "gehrer milena hochzeit");
+        gehrerMilenaStandesamtlichHochzeit.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
+        myCalendarList.add(gehrerMilenaStandesamtlichHochzeit);
+
+
+        // gehrer milena hochzeit
+        Calendar gehrerMilenaHochzeitAnfang = getInstance();
+        gehrerMilenaHochzeitAnfang.set(2021, Calendar.AUGUST, 21, 14, 0);
+        Calendar gehrerMilenaHochzeitEnde = getInstance();
+        gehrerMilenaHochzeitEnde.set(2021, Calendar.AUGUST, 22, 5, 0);
+        MyCalendar gehrerMilenaHochzeit = new MyCalendar(gehrerMilenaHochzeitAnfang, gehrerMilenaHochzeitEnde, "gehrer milena hochzeitsparty");
+        gehrerMilenaHochzeit.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
+        myCalendarList.add(gehrerMilenaHochzeit);
+
+
+        // gehrer milena hochzeit
+        Calendar adiSophiaHochzeitAnfang = getInstance();
+        adiSophiaHochzeitAnfang.set(2022, Calendar.AUGUST, 22, 14, 0);
+        Calendar adiSophiaHochzeitEnde = getInstance();
+        adiSophiaHochzeitEnde.set(2022, Calendar.AUGUST, 23, 5, 0);
+        MyCalendar adiSophiaHochzeit = new MyCalendar(adiSophiaHochzeitAnfang, adiSophiaHochzeitEnde, "adi sophia hochzeit");
+        adiSophiaHochzeit.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
+        myCalendarList.add(adiSophiaHochzeit);
+
+
 
 
         for (int year = startYear; year <= endYear; year++) {

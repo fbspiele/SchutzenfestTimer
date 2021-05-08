@@ -23,6 +23,8 @@
     <string name="pref_key_startOfWeekListPreference">pref_key_startOfWeekListPreference</string>
     <string name="pref_title_startOfWeekListPreference">tag an dem die woche startet</string>
 
+    <string name="pref_key_allesResetten">pref_key_allesResetten</string>
+    <string name="pref_title_allesResetten">alles zurücksetzen</string>
 
     <string name="pref_key_nextDayTime">pref_key_nextDayTime</string>
     <string name="pref_key_nextDayTimeHourOfDay">pref_key_nextDayTimeHourOfDay</string>

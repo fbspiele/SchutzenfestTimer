@@ -15,6 +15,11 @@
         android:title="@string/pref_title_nextDayTime"
         />
 
+    <Preference
+        android:key="@string/pref_key_allesResetten"
+        android:title="@string/pref_title_allesResetten" />
+
+
     <PreferenceCategory
         android:key="@string/pref_key_developerOptions"
         android:title="@string/pref_title_developerOptions"

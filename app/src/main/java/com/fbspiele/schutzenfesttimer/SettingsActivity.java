@@ -337,7 +337,6 @@ public class SettingsActivity extends PreferenceActivity {
             addPreferencesFromResource(R.xml.pref_general);
             final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-            //todo generell fragment weg und das in header in einstellungen
             final String nextDayErklarText = "daraus wird berechnet wie oft noch schlafen bis zum event\nwenn auf 00:00 dann stimmt das mit den tagen überein";
 
             final Preference nextDayPref = findPreference(getString(R.string.pref_key_nextDayTime));
@@ -363,6 +362,28 @@ public class SettingsActivity extends PreferenceActivity {
                 }
             });
 
+            final Preference allesResettenPref = findPreference(getString(R.string.pref_key_allesResetten));
+            allesResettenPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle("alles zurücksetzen?!?!?!");
+                    builder.setMessage("willst du wirklich alles resetten und auf den ausgangszustand zurücksetzen?");
+                    builder.setPositiveButton("jo", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            MainActivity.resetEverything(getContext());
+                        }
+                    });
+                    builder.setNegativeButton("nö doch ned", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                    return false;
+                }
+            });
 
 
             final ListPreference firstDayOfWeekPref = (ListPreference) findPreference(getString(R.string.pref_key_startOfWeekListPreference));

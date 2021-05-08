@@ -31,6 +31,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
         Log.v("myNotificationBroadCastReciever","onReceive");
         MainActivity.loadEverything(context);
 
+
         makeNotificationIntent = new Intent(context, myNotificationBroadCastReciever.class);
         makeNotificationIntent.setAction(intentActionMakeNotifications);
         Log.v("intent","intent "+intent.toString()+"\naction "+intent.getAction());
@@ -39,6 +40,8 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
             NotificationManagerCompat.from(context).cancelAll();
         }
         else if(Objects.requireNonNull(intent.getAction()).contains(intentActionMakeNotifications)){
+            //intent um notification zu posten
+
             long calendarId = intent.getLongExtra(context.getResources().getString(R.string.intentExtraName_CalendarId),0);
             long benachrichtigungsId = intent.getLongExtra(context.getResources().getString(R.string.intentExtraName_BenachrichtigungsId),0);
             int benachrichtigungsTyp = intent.getIntExtra(context.getResources().getString(R.string.intentExtraName_BenachrichtigungsTyp),0);
@@ -68,10 +71,10 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                         case MainActivity.NOTIFICATION_TYPE_STUNDEN:{
                             String contentText = "";
                             if(benachrichtigungsTypValue>0){
-                                contentText = "nur noch "+benachrichtigungsTypValue + " stunden ( . Y . )";
+                                contentText = "nur noch "+benachrichtigungsTypValue + " stunden";
                             }
                             else {
-                                contentText = "vor "+benachrichtigungsTypValue + " sekunden ( . Y . )";
+                                contentText = "vor "+benachrichtigungsTypValue + " sekunden";
                             }
                             createNotification(context,myCalendar.getName(),contentText);
                             break;
@@ -90,10 +93,10 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                         case MainActivity.NOTIFICATION_TYPE_SEKUNDEN:{
                             String contentText = "";
                             if(benachrichtigungsTypValue>0){
-                                contentText = "nur noch "+benachrichtigungsTypValue + " mit sekunden ( . Y . )";
+                                contentText = "nur noch "+benachrichtigungsTypValue + " sekunden";
                             }
                             else {
-                                contentText = "vor "+benachrichtigungsTypValue + " mit sekunden ( . Y . )";
+                                contentText = "vor "+benachrichtigungsTypValue + " sekunden";
                             }
                             createNotification(context,myCalendar.getName(),contentText);
                             break;
@@ -108,6 +111,10 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                 }
                 updateNotificationIntents(context);
             }
+        }
+        else if(intent.getAction().contains("android.intent.action.BOOT_COMPLETED")){
+
+            updateNotificationIntents(context);
         }
         else{
             Log.w("myNotificationBroadCastReciever OnReceive","falsche/keine intentaction gesetzt");
@@ -162,7 +169,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setContentIntent(goToAppPendingIntent)
-                .addAction(new NotificationCompat.Action(R.drawable.ic_drawing,"cancel notifications",getPendingIntentToThisReciever(context,intentActionCancelNotifications)))
+                .addAction(new NotificationCompat.Action(R.drawable.ic_drawing,"benachrichtigungen abbrechen",getPendingIntentToThisReciever(context,intentActionCancelNotifications)))
                 .setChannelId(notificationChannelID);
         notificationManagerCompat = NotificationManagerCompat.from(context);
         long millis = Calendar.getInstance().getTimeInMillis();

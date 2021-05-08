@@ -32,7 +32,11 @@ public class MySchuCalendar extends MyCalendar{
     private void resetSchuCalendar(){
         updateAnfang(getSchuBeginnCalendar(super.initialYear));
         updateEnde(getSchuEnde(super.initialYear));
-        updateName("schüüü "+super.initialYear);
+        String schuuuuName = "schüüü "+super.initialYear;
+        if (super.initialYear == 2020 || super.initialYear == 2021){
+            schuuuuName = "kein " + schuuuuName + " :(";
+        }
+        updateName(schuuuuName);
         update();
     }
 
