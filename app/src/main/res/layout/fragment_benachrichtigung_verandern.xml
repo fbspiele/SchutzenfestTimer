@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/scrollViewGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:id="@+id/nameTitle"
+                android:paddingTop="@dimen/dim_abstand_zwischen_fragment_verandern_abschnitten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pref_title_notificationName"
+                android:textColor="@color/my_at_android_color_secondary_text_material_light" />
+
+            <EditText
+                android:id="@+id/nameChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:text="@string/pref_title_notificationNameDefault"
+                android:textColor="@color/my_at_android_color_text_color_primary" />
+
+            <TextView
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:id="@+id/typTitle"
+                android:paddingTop="@dimen/dim_abstand_zwischen_fragment_verandern_abschnitten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pref_title_notificationTyp"
+                android:textColor="@color/my_at_android_color_secondary_text_material_light" />
+
+
+            <RadioGroup
+                android:id="@+id/radioGroupTyp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin" >
+
+                <RadioButton
+                    android:id="@+id/radioButtonTage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pref_title_notificationTypTage" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonStunden"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pref_title_notificationTypStunden" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMinuten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pref_title_notificationTypMinuten" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSekunden"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pref_title_notificationTypSekunden" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/uhrzeitTitle"
+                style="@style/Widget.AppCompat.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/dim_abstand_zwischen_fragment_verandern_abschnitten"
+                android:text="@string/pref_title_notificationUhrzeit"
+                android:textColor="@color/my_at_android_color_secondary_text_material_light"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/uhrzeitAuswahlen"
+                style="@style/Widget.AppCompat.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/activity_horizontal_margin"
+                android:paddingVertical="@dimen/activity_horizontal_margin"
+                android:text="@string/pref_standardUhrzeit"
+                android:textSize="18sp"
+                android:textColor="@color/my_at_android_color_text_color_primary"
+                android:visibility="gone"  />
+
+
+            <Switch
+                android:id="@+id/switchZukunft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/dim_abstand_zwischen_fragment_verandern_abschnitten"
+                android:text="@string/pref_title_notificationZukunftigeBenachrichtigen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uhrzeitAuswahlen"
+                android:textColor="@color/my_at_android_color_secondary_text_material_light"
+                android:visibility="gone"  />
+
+            <Switch
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:id="@+id/switchPresent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pref_title_notificationPresenteBenachrichtigen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/switchZukunft"
+                android:textColor="@color/my_at_android_color_secondary_text_material_light"
+                android:visibility="gone"  />
+
+            <Switch
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:id="@+id/switchVergangenheit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pref_title_notificationVergangeneBenachrichtigen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/switchPresent"
+                android:textColor="@color/my_at_android_color_secondary_text_material_light"
+                android:visibility="gone"  />
+
+
+            <LinearLayout
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/dim_abstand_zwischen_fragment_verandern_abschnitten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/switchVergangenheit">
+
+
+                        <RelativeLayout
+                            android:id="@+id/ListConditionsFurBenachrichtigungHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/alleSovieleTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignEnd="@id/ListConditionsFurBenachrichtigungCenter"
+                                android:layout_alignParentStart="true"/>
+
+                            <TextView
+                                android:id="@+id/ListConditionsFurBenachrichtigungCenter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true" />
+
+                            <TextView
+                                android:id="@+id/abstandWenigerTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@id/ListConditionsFurBenachrichtigungCenter"
+                                android:layout_alignParentEnd="true"/>
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ListConditionsFurBenachrichtigung"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" />
+
+
+                        <Button
+                            android:id="@+id/ListConditionsFurBenachrichtigungNewCondition"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:text="@string/pref_title_notificationConditionNewCondition"
+                            android:textAllCaps="false" />
+
+
+                    </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

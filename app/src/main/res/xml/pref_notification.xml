@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:title="@string/pref_title_notificationUhrzeit"
+        android:key="@string/pref_key_notificationUhrzeit"
+        />
+
+    <SwitchPreference
+        android:key="@string/pref_key_notificationZukunftigeBenachrichtigen"
+        android:title="@string/pref_title_notificationZukunftigeBenachrichtigen"/>
+
+    <SwitchPreference
+        android:key="@string/pref_key_notificationPresenteBenachrichtigen"
+        android:title="@string/pref_title_notificationPresenteBenachrichtigen"/>
+
+    <SwitchPreference
+        android:key="@string/pref_key_notificationVergangeneBenachrichtigen"
+        android:title="@string/pref_title_notificationVergangeneBenachrichtigen"/>
+
+    <EditTextPreference
+        android:key="@string/pref_key_notificationAlleSoviele"/>
+
+    <EditTextPreference
+        android:key="@string/pref_key_notificationHochstAbstandFurBenachrichtigung"/>
+
+
+
+    <Preference
+        android:title="@string/pref_title_notificationLoschen"
+        android:key="@string/pref_key_notificationLoschen"
+        />
+
+</PreferenceScreen>

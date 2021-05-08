@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="@string/pref_key_debugLogging"
+        android:title="@string/pref_title_debugLogging" />
+
+    <Preference
+        android:key="@string/pref_key_logAnzeigen"
+        android:title="@string/pref_title_logAnzeigen" />
+</PreferenceScreen>

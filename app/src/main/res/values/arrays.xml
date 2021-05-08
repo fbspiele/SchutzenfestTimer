@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pref_stringArray_firstDaysOfWeek">
+        <item>system default</item>
+        <item>sunday</item>
+        <item>monday</item>
+        <item>tuesday</item>
+        <item>wednesday</item>
+        <item>thursday</item>
+        <item>fryday</item>
+        <item>saturday</item>
+    </string-array>
+
+    <string-array name="pref_stringArray_firstDaysOfWeek_ger">
+        <item>selbe wie handy</item>
+        <item>sonntag</item>
+        <item>montag</item>
+        <item>dienstag</item>
+        <item>mittwoch</item>
+        <item>donnerstag</item>
+        <item>freitag</item>
+        <item>samstag</item>
+    </string-array>
+
+</resources>

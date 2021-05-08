@@ -1,0 +1,23 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <header
+        android:fragment="com.fbspiele.schutzenfesttimer.SettingsActivity$GeneralFragment"
+        android:title="@string/pref_header_general" />
+
+    <header
+        android:fragment="com.fbspiele.schutzenfesttimer.SettingsActivity$EntriesFragment"
+        android:title="@string/pref_header_entries" />
+
+    <header
+        android:fragment="com.fbspiele.schutzenfesttimer.SettingsActivity$StandardNotificationsFragment"
+        android:title="@string/pref_header_notifications" />
+
+
+    <header
+        android:fragment="com.fbspiele.schutzenfesttimer.SettingsActivity$DebuggingFragment"
+        android:title="@string/pref_header_debugging" />
+
+
+
+</preference-headers>

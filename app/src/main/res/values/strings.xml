@@ -1,0 +1,152 @@
+<resources>
+    <string name="app_name">schüüüüütimer</string>
+    <string name="tab_text_1">2020</string>
+    <string name="tab_text_2">2021</string>
+    <string name="startYear">2017</string>
+    <string name="endYear">2037</string>
+    <string name="pref_header_entries">einträge</string>
+    <string name="pref_header_notifications">standardbenachrichtigungen</string>
+    <string name="pref_header_general">generell</string>
+    <string name="pref_header_debugging">debugging</string>
+
+
+    <string name="pref_key_generalPrefsScreen">pref_key_generalPrefsScreen</string>
+
+    <string name="pref_key_show_notification">pref_key_show_notification</string>
+    <string name="pref_title_show_notification">benachrichtigungen anzeigen?</string>
+    <string name="pref_summary_show_notification">aktiviert/deaktiviert alle benachrichtigungen</string>
+
+    <string name="pref_key_developerOptions">pref_key_developerOptions</string>
+    <string name="pref_title_developerOptions">developeroptionen</string>
+
+    <string name="pref_key_startOfWeek">pref_key_startOfWeek</string>
+    <string name="pref_key_startOfWeekListPreference">pref_key_startOfWeekListPreference</string>
+    <string name="pref_title_startOfWeekListPreference">tag an dem die woche startet</string>
+
+
+    <string name="pref_key_nextDayTime">pref_key_nextDayTime</string>
+    <string name="pref_key_nextDayTimeHourOfDay">pref_key_nextDayTimeHourOfDay</string>
+    <string name="pref_key_nextDayTimeMin">pref_key_nextDayTimeMin</string>
+    <string name="pref_title_nextDayTime">tageswechsel</string>
+
+
+    <string name="pref_key_myCalendarListSaveKey">pref_key_myCalendarListSaveKey</string>
+    <string name="pref_key_mStandardBenachrichtigungListSaveKey">pref_key_mStandardBenachrichtigungListSaveKey</string>
+
+
+
+    <string name="pref_key_temp_name">pref_key_temp_name</string>
+    <string name="pref_title_temp_name">name</string>
+    <string name="pref_key_temp_startDatum">pref_key_temp_startDatum</string>
+    <string name="pref_title_temp_startDatum">startdatum</string>
+    <string name="pref_key_temp_startZeit">pref_key_temp_startZeit</string>
+    <string name="pref_title_temp_startZeit">startzeit</string>
+    <string name="pref_key_temp_endDatum">pref_key_temp_endDatum</string>
+    <string name="pref_title_temp_endDatum">enddatum</string>
+    <string name="pref_key_temp_endZeit">pref_key_temp_endZeit</string>
+    <string name="pref_title_temp_endZeit">endzeit</string>
+
+    <string name="pref_key_calendarsNeuerCalendar">pref_key_calendarsNeuerCalendar</string>
+    <string name="pref_title_calendarsNeuerCalendar">neues event hinzufügen</string>
+
+    <string name="pref_key_calendarsCalendarLoschen">pref_key_calendarsCalendarLoschen</string>
+    <string name="pref_title_calendarsCalendarLoschen">event löschen</string>
+
+    <string name="pref_key_calendarsCategoryIndividuals">pref_key_calendarsCategoryIndividuals</string>
+    <string name="pref_title_calendarsCategoryIndividuals">individuelle events</string>
+
+    <string name="pref_key_calendarsCategorySchus">pref_key_calendarsCategorySchus</string>
+    <string name="pref_title_calendarsCategorySchus">schüüüüüs</string>
+
+    <string name="pref_key_calendarsSchusAktiviert">pref_key_calendarsSchusAktiviert</string>
+    <string name="pref_title_calendarsSchusAktiviert">schüüüüüs aktiviert?</string>
+
+    <string name="pref_title_alleSchusResetten">alle schüüüs zurücksetzen</string>
+    <string name="pref_message_alleSchusResetten">wirklich alle schüüüs zurücksetzen?</string>
+
+    <string name="pref_key_standardNotificationsNeueHinzufg">pref_key_standardNotificationsNeueHinzufg</string>
+    <string name="pref_title_standardNotificationsNeueHinzufg">neue benachrichtigung hinzufügen</string>
+
+
+    <string name="pref_title_notificationName">benachrichtigungsname</string>
+    <string name="pref_title_notificationNameDefault">name</string>
+
+    <string name="pref_title_notificationTyp">benachrichtigen anhand von</string>
+    <string name="pref_key_notificationTyp">pref_key_notificationTyp</string>
+    <string name="pref_title_notificationTypTage">tagen</string>
+    <string name="pref_title_notificationTypStunden">stunden</string>
+    <string name="pref_title_notificationTypMinuten">minuten</string>
+    <string name="pref_title_notificationTypSekunden">sekunden</string>
+
+
+    <string name="pref_key_notificationUhrzeit">pref_key_notificationUhrzeit</string>
+    <string name="pref_title_notificationUhrzeit">uhrzeit wann an dem tag benachrichtigt werden soll</string>
+
+
+    <string name="pref_key_notificationZukunftigeBenachrichtigen">pref_key_notificationZukunftigeBenachrichtigen</string>
+    <string name="pref_title_notificationZukunftigeBenachrichtigen">für zukünftige events benachrichtigen</string>
+
+    <string name="pref_key_notificationPresenteBenachrichtigen">pref_key_notificationPresenteBenachrichtigen</string>
+    <string name="pref_title_notificationPresenteBenachrichtigen">an den eventtagen benachrichtigen</string>
+
+    <string name="pref_key_notificationVergangeneBenachrichtigen">pref_key_notificationVergangeneBenachrichtigen</string>
+    <string name="pref_title_notificationVergangeneBenachrichtigen">für vergangene events benachrichtigen</string>
+
+    <string name="pref_key_notificationAlleSoviele">pref_key_notificationAlleSovieleTage</string>
+    <string name="pref_title_notificationAlleSoviele_tage">jeden sovielten tag benachrichtigen</string>
+    <string name="pref_title_notificationAlleSoviele_stunden">jeden sovielte stunde benachrichtigen</string>
+    <string name="pref_title_notificationAlleSoviele_minuten">jeden sovielte minute benachrichtigen</string>
+    <string name="pref_title_notificationAlleSoviele_sekunden">jeden sovielte sekunde benachrichtigen</string>
+
+    <string name="pref_key_notificationHochstAbstandFurBenachrichtigung">pref_key_notificationHochstAbstandFurBenachrichtigugn</string>
+    <string name="pref_title_notificationHochstAbstandFurBenachrichtigung_tage">nur benachrichtigen wenn soviele/weniger tage entfernt vom event</string>
+    <string name="pref_title_notificationHochstAbstandFurBenachrichtigung_stunden">nur benachrichtigen wenn soviele/weniger stunden entfernt vom event</string>
+    <string name="pref_title_notificationHochstAbstandFurBenachrichtigung_minuten">nur benachrichtigen wenn soviele/weniger minuten entfernt vom event</string>
+    <string name="pref_title_notificationHochstAbstandFurBenachrichtigung_sekunden">nur benachrichtigen wenn soviele/weniger sekunden entfernt vom event</string>
+
+    <string name="pref_title_notificationConditionNewCondition">neue bedingung hinzufügen</string>
+
+    <string name="pref_key_notificationLoschen">pref_key_notificationLoschen</string>
+    <string name="pref_title_notificationLoschen">benachrichtigung löschen?</string>
+
+    <string name="pref_standardUhrzeit">00:00</string>
+
+    <string name="pref_key_benachrichtigungPrefScreenAlle">pref_key_benachrichtigungPrefScreenAlle</string>
+
+
+    <string name="pref_title_notificationConditionLoschenButtonDescription">bedingung löschen</string>
+
+
+    <string name="pref_key_calendarPrefScreenBenachrichtigungen">pref_key_calendarPrefScreenBenachrichtigungen</string>
+    <string name="pref_title_calendarPrefScreenBenachrichtigungen">benachrichtigungen</string>
+
+    <string name="pref_key_calendarPrefEventBenachrichtigungenStandardBenachrichtigungenVerwenden">pref_key_calendarPrefEventBenachrichtigungenStandardBenachrichtigungenVerwenden</string>
+    <string name="pref_title_calendarPrefEventBenachrichtigungenStandardBenachrichtigungenVerwenden">standardbenachrichtigungen verwenden?</string>
+
+
+    <string name="pref_key_eventNotificationsNeueHinzufg">pref_key_eventNotificationsNeueHinzufg</string>
+    <string name="pref_title_eventNotificationsNeueHinzufg">neue benachrichtigung</string>
+
+
+    <string name="pref_key_calendarPrefCategoryIndividuelleBenachrichtigungen">pref_key_calendarPrefCategoryIndividuelleBenachrichtigungen</string>
+    <string name="pref_title_calendarPrefCategoryIndividuelleBenachrichtigungen">individuelle benachrichtigungen für dieses event</string>
+    
+    
+    <string name="intentExtraName_ZeitPunkt">intentExtraName_ZeitPunkt</string>
+    <string name="intentExtraName_BenachrichtigungsTyp">intentExtraName_BenachrichtigungsTyp</string>
+    <string name="intentExtraName_BenachrichtigungsTypValue">intentExtraName_BenachrichtigungsTypValue</string>
+    <string name="intentExtraName_CalendarId">intentExtraName_CalendarId</string>
+    <string name="intentExtraName_BenachrichtigungsId">intentExtraName_BenachrichtigungsId</string>
+
+
+    <string name="pref_key_appZumAllerErstenMalGeoffnet">pref_key_appZumAllerErstenMalGeoffnet</string>
+
+    <string name="myQuickSettingsTile_label">nächstes schüüü</string>
+
+    <string name="pref_key_logString">pref_key_logString</string>
+    <string name="pref_key_debugLogging">pref_key_debugLogging</string>
+    <string name="pref_title_debugLogging">debug logging?</string>
+    <string name="pref_key_logAnzeigen">pref_key_logAnzeigen</string>
+    <string name="pref_title_logAnzeigen">log anzeigen</string>
+
+</resources>

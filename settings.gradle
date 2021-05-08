@@ -1,0 +1,2 @@
+rootProject.name='SchutzenfestTimer'
+include ':app'

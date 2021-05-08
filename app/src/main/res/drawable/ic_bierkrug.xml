@@ -1,0 +1,50 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="512dp"
+    android:height="512dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+  <path
+      android:pathData="m350,182h59l18.526,9.474L437,210V322L428.045,341.045 409,350h-59v-28h59V210h-59z"
+      android:strokeAlpha="1"
+      android:strokeLineJoin="miter"
+      android:strokeWidth="1"
+      android:fillColor="#000000"
+      android:strokeColor="#00000000"
+      android:fillAlpha="1"
+      android:strokeLineCap="butt"/>
+  <path
+      android:pathData="m96,136h254v269l-4.545,17.234 -12.675,9.558L318,437H128L104.609,428.391 96,405Z"
+      android:strokeAlpha="1"
+      android:strokeLineJoin="miter"
+      android:strokeWidth="1"
+      android:fillColor="#000000"
+      android:strokeColor="#666666"
+      android:fillAlpha="1"
+      android:strokeLineCap="butt"/>
+  <path
+      android:pathData="M128,75L318,75A32,32 0,0 1,350 107L350,405A32,32 0,0 1,318 437L128,437A32,32 0,0 1,96 405L96,107A32,32 0,0 1,128 75z"
+      android:strokeAlpha="1"
+      android:strokeLineJoin="round"
+      android:strokeWidth="7.99999952"
+      android:fillColor="#00000000"
+      android:strokeColor="#000000"
+      android:fillAlpha="1"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M96,136H350"
+      android:strokeAlpha="1"
+      android:strokeLineJoin="miter"
+      android:strokeWidth="8"
+      android:fillColor="#00000000"
+      android:strokeColor="#000000"
+      android:strokeLineCap="butt"/>
+  <path
+      android:pathData="m350,322v28m0,-168v28,0m55,112H350M409,214V318M350,210h55m4,108c0,2.209 -1.791,4 -4,4m0,-112c2.209,0 4,1.791 4,4m-4,136H350M437,214V318M350,182h55m32,136c0,17.673 -14.327,32 -32,32m0,-168c17.673,0 32,14.327 32,32"
+      android:strokeAlpha="1"
+      android:strokeLineJoin="miter"
+      android:strokeWidth="8"
+      android:fillColor="#00000000"
+      android:strokeColor="#000000"
+      android:fillAlpha="1"
+      android:strokeLineCap="butt"/>
+</vector>

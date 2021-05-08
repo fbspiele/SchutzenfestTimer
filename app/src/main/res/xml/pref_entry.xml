@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:key="@string/pref_key_temp_name"
+        android:title="@string/pref_title_temp_name"
+        />
+
+    <Preference
+        android:key="@string/pref_key_temp_startDatum"
+        android:title="@string/pref_title_temp_startDatum"
+        />
+    <Preference
+        android:key="@string/pref_key_temp_startZeit"
+        android:title="@string/pref_title_temp_startZeit"
+        />
+
+    <Preference
+        android:key="@string/pref_key_temp_endDatum"
+        android:title="@string/pref_title_temp_endDatum"
+        />
+    <Preference
+        android:key="@string/pref_key_temp_endZeit"
+        android:title="@string/pref_title_temp_endZeit"
+        />
+
+    <PreferenceScreen
+        android:key="@string/pref_key_calendarPrefScreenBenachrichtigungen"
+        android:title="@string/pref_title_calendarPrefScreenBenachrichtigungen">
+        <SwitchPreference
+            android:key="@string/pref_key_calendarPrefEventBenachrichtigungenStandardBenachrichtigungenVerwenden"
+            android:title="@string/pref_title_calendarPrefEventBenachrichtigungenStandardBenachrichtigungenVerwenden"
+            android:defaultValue="true"
+            />
+        <Preference
+            android:key="@string/pref_key_eventNotificationsNeueHinzufg"
+            android:title="@string/pref_title_eventNotificationsNeueHinzufg"
+            />
+        <PreferenceCategory
+            android:key="@string/pref_key_calendarPrefCategoryIndividuelleBenachrichtigungen"
+            android:title="@string/pref_title_calendarPrefCategoryIndividuelleBenachrichtigungen"/>
+    </PreferenceScreen>
+
+    <Preference
+        android:key="@string/pref_key_calendarsCalendarLoschen"
+        android:title="@string/pref_title_calendarsCalendarLoschen"
+        />
+
+</PreferenceScreen>

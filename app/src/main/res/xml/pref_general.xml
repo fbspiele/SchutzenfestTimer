@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/pref_key_show_notification"
+        android:title="@string/pref_title_show_notification"
+        android:summary="@string/pref_summary_show_notification"/>
+
+    <Preference
+        android:key="@string/pref_key_nextDayTime"
+        android:title="@string/pref_title_nextDayTime"
+        />
+
+    <PreferenceCategory
+        android:key="@string/pref_key_developerOptions"
+        android:title="@string/pref_title_developerOptions"
+        >
+        <ListPreference
+            android:key="@string/pref_key_startOfWeekListPreference"
+            android:title="@string/pref_title_startOfWeekListPreference"
+            android:entryValues="@array/pref_stringArray_firstDaysOfWeek"
+            android:entries="@array/pref_stringArray_firstDaysOfWeek_ger"
+            />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
