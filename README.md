@@ -3,7 +3,7 @@
 das ist die offizielle fb spiele schüüü (und andere sachen) timer app für countdowns und so
 
 
-## berechtigungen und privatsphäre
+## berechtigungen und datenschutz
 die app benötigt nur eine berechtigungen und sendet keine daten zu mir oder so alles is auf dem handy gespeichert und ich kann davon nix sehen
 
 ### berechtigung neustart
