@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
     //TODO
     // jahre monate wochen einbauen
     // unterscheiden zwischen standardnotifications und standardnotifications für individuelle events
+    // spätere schüüüs nach https://nn.wikipedia.org/wiki/P%C3%A5skeformelen#Formeloppbygging berechnen
     //TODO bergfest für schüüs
 
 

@@ -167,7 +167,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setContentIntent(goToAppPendingIntent)
-                .addAction(new NotificationCompat.Action(R.drawable.ic_drawing,"benachrichtigungen abbrechen",getPendingIntentToThisReciever(context,intentActionCancelNotifications)))
+                .addAction(new NotificationCompat.Action(R.drawable.ic_drawing,"all benachrichtigungen vorübergehend abbrechen",getPendingIntentToThisReciever(context,intentActionCancelNotifications)))
                 .setChannelId(notificationChannelID);
         notificationManagerCompat = NotificationManagerCompat.from(context);
         long millis = Calendar.getInstance().getTimeInMillis();
