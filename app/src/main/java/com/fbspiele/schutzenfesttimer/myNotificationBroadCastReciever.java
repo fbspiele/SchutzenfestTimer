@@ -24,7 +24,7 @@ import static android.content.Context.ALARM_SERVICE;
 
 public class myNotificationBroadCastReciever extends BroadcastReceiver {
     final static String tag =  "myNotificationBroadCastReciever";
-    static int zuPostendeIntents = 3;       //TODO später mehr machen falls 3 auf einmal wären
+    static int zuPostendeIntents = 7;
 
     @Override
     public void onReceive(Context context, Intent intent) {
