@@ -126,27 +126,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*myCalendarList = new ArrayList<>();
-                saveMyCalendarList(getApplicationContext());
-                Snackbar.make(view,  "myCalendarList gelöscht", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
-
-                //new myNotificationBroadCastReciever().updateNotificationIntents(getApplicationContext());
-                Toast.makeText(getApplicationContext(), "fab button hat zur zeit keine funktion",Toast.LENGTH_LONG).show();
-            }
-        });
-        fab.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                //new myNotificationBroadCastReciever().cancelNotificationIntents(getApplicationContext());
-                Toast.makeText(getApplicationContext(), "fab button hat zur zeit keine funktion",Toast.LENGTH_LONG).show();
-                return true;
-            }
-        });
 
 
         //intents aktualisieren
@@ -163,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
     //quick settings tile
 
     //TODO hier weitermachen
-    // TODO stunden, minuten, sekunden notifications testen
     // jahre monate wochen einbauen
     // unterscheiden zwischen standardnotifications und standardnotifications für individuelle events
     //TODO bergfest für schüüs
