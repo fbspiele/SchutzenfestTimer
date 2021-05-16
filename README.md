@@ -15,3 +15,6 @@ um den schnellzugriffsbutton mit dem nächsten schüüü zu machen muss die app 
 # neues event hinzufügen
 ![siehe diese screenshots](https://github.com/fbspiele/SchutzenfestTimer/blob/master/neuesEventErklarung.png?raw=true)
 die events werden automatisch gespeichert
+
+# benachrichtigungsdialog
+![beispiel benachrichtigung](https://github.com/fbspiele/SchutzenfestTimer/blob/master/benachrichtigungErklarung.png?raw=true)
