@@ -13,7 +13,7 @@ die app muss wissen wann das handy neugestartet wurde um nach dem neustart die n
 um den schnellzugriffsbutton mit dem nächsten schüüü zu machen muss die app das schnellzugriffsicon dafür koppeln können. die berechtigung ist eigentlich auch automatisch gegeben und wird wahrscheinlich auch nicht angezeigt weil sie fast selbstverständlich ist. wenn du die berechtigung ausschaltest kannst du das schnellzugriffsicon halt nicht mehr sehen und nicht mehr nutzen
 
 # neues event hinzufügen
-![siehe diese screenshots](https://github.com/fbspiele/SchutzenfestTimer/blob/master/neuesEventErklarung.png?raw=true)
+![siehe diese screenshots](https://github.com/fbspiele/SchutzenfestTimer/blob/master/neuesEventErklarung.png?raw=true){:height="50%" width="50%"}
 die events werden automatisch gespeichert
 
 # benachrichtigungsdialog
