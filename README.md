@@ -3,10 +3,10 @@
 das ist die offizielle fb spiele schüüü (und andere sachen) timer app für countdowns und so
 
 # funktionen
-die app kann
-* die zeit bis dahin anzeigen
+* die zeit bis zu/seit den events anzeigen
 * benachrichtungen für die events machen
 * einen schnellzugriff um spontan angezeigt zu bekommen wann das nächste schüüü is
+  * und kopiert es als hashtag in die zwischenablage
 
 # hilfe
 ## neues event hinzufügen
