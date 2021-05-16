@@ -204,34 +204,34 @@ public class MainActivity extends AppCompatActivity {
         geburtGottes.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
         myCalendarList.add(geburtGottes);
 
-        // gehrer milena standesamtliche hochzeit
-        Calendar gehrerMilenaHochzeitStandesamtlichAnfang = getInstance();
-        gehrerMilenaHochzeitStandesamtlichAnfang.set(2021, Calendar.MAY, 22, 10, 0);
-        Calendar gehrerMilenaHochzeitStandesamtlichEnde = getInstance();
-        gehrerMilenaHochzeitStandesamtlichEnde.set(2021, Calendar.MAY, 22, 18, 0);
-        MyCalendar gehrerMilenaStandesamtlichHochzeit = new MyCalendar(gehrerMilenaHochzeitStandesamtlichAnfang, gehrerMilenaHochzeitStandesamtlichEnde, "gehrer milena hochzeit");
-        gehrerMilenaStandesamtlichHochzeit.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
-        myCalendarList.add(gehrerMilenaStandesamtlichHochzeit);
+        // g m standesamtliche hochzeit
+        Calendar gmHochzeitStandesamtlichAnfang = getInstance();
+        gmHochzeitStandesamtlichAnfang.set(2021, Calendar.MAY, 22, 10, 0);
+        Calendar gmHochzeitStandesamtlichEnde = getInstance();
+        gmHochzeitStandesamtlichEnde.set(2021, Calendar.MAY, 22, 18, 0);
+        MyCalendar gmStandesamtlichHochzeit = new MyCalendar(gmHochzeitStandesamtlichAnfang, gmHochzeitStandesamtlichEnde, "g*** m*** hochzeit");
+        gmStandesamtlichHochzeit.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
+        myCalendarList.add(gmStandesamtlichHochzeit);
 
 
-        // gehrer milena hochzeit
-        Calendar gehrerMilenaHochzeitAnfang = getInstance();
-        gehrerMilenaHochzeitAnfang.set(2021, Calendar.AUGUST, 21, 14, 0);
-        Calendar gehrerMilenaHochzeitEnde = getInstance();
-        gehrerMilenaHochzeitEnde.set(2021, Calendar.AUGUST, 22, 5, 0);
-        MyCalendar gehrerMilenaHochzeit = new MyCalendar(gehrerMilenaHochzeitAnfang, gehrerMilenaHochzeitEnde, "gehrer milena hochzeitsparty");
-        gehrerMilenaHochzeit.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
-        myCalendarList.add(gehrerMilenaHochzeit);
+        // g m hochzeit
+        Calendar gmHochzeitAnfang = getInstance();
+        gmHochzeitAnfang.set(2021, Calendar.AUGUST, 21, 14, 0);
+        Calendar gmHochzeitEnde = getInstance();
+        gmHochzeitEnde.set(2021, Calendar.AUGUST, 22, 5, 0);
+        MyCalendar gmHochzeit = new MyCalendar(gmHochzeitAnfang, gmHochzeitEnde, "g*** m*** hochzeitsparty");
+        gmHochzeit.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
+        myCalendarList.add(gmHochzeit);
 
 
-        // gehrer milena hochzeit
-        Calendar adiSophiaHochzeitAnfang = getInstance();
-        adiSophiaHochzeitAnfang.set(2022, Calendar.AUGUST, 22, 14, 0);
-        Calendar adiSophiaHochzeitEnde = getInstance();
-        adiSophiaHochzeitEnde.set(2022, Calendar.AUGUST, 23, 5, 0);
-        MyCalendar adiSophiaHochzeit = new MyCalendar(adiSophiaHochzeitAnfang, adiSophiaHochzeitEnde, "adi sophia hochzeit");
-        adiSophiaHochzeit.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
-        myCalendarList.add(adiSophiaHochzeit);
+        // a s hochzeit
+        Calendar asHochzeitAnfang = getInstance();
+        asHochzeitAnfang.set(2022, Calendar.AUGUST, 22, 14, 0);
+        Calendar asHochzeitEnde = getInstance();
+        asHochzeitEnde.set(2022, Calendar.AUGUST, 23, 5, 0);
+        MyCalendar asHochzeit = new MyCalendar(asHochzeitAnfang, asHochzeitEnde, "a*** s*** hochzeit");
+        asHochzeit.addBenachrichtigung(hundertMillionenSekBenachrichtigung);
+        myCalendarList.add(asHochzeit);
 
 
 
