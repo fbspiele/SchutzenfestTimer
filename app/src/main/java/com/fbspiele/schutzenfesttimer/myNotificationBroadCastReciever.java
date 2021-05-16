@@ -15,8 +15,6 @@ import androidx.core.app.NotificationManagerCompat;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -69,7 +67,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                             break;
                         }
                         case MainActivity.NOTIFICATION_TYPE_STUNDEN:{
-                            String contentText = "";
+                            String contentText;
                             if(benachrichtigungsTypValue>0){
                                 contentText = "nur noch "+benachrichtigungsTypValue + " stunden";
                             }
@@ -80,7 +78,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                             break;
                         }
                         case MainActivity.NOTIFICATION_TYPE_MINUTEN:{
-                            String contentText = "";
+                            String contentText;
                             if(benachrichtigungsTypValue>0){
                                 contentText = "nur noch "+benachrichtigungsTypValue + " mit nutten ( . Y . )";
                             }
@@ -91,7 +89,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
                             break;
                         }
                         case MainActivity.NOTIFICATION_TYPE_SEKUNDEN:{
-                            String contentText = "";
+                            String contentText;
                             if(benachrichtigungsTypValue>0){
                                 contentText = "nur noch "+benachrichtigungsTypValue + " sekunden";
                             }
@@ -207,42 +205,39 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
     void updateNotificationIntents(final Context context){
         //viel cpu aufwand
         //berechnet erst alle notifications und sortiert die dann und sucht sich die nächsten erst raus deswegen nicht on MainThread
-        Thread thread = new Thread(new Runnable(){
-            @Override
-            public void run(){
+        Thread thread = new Thread(() -> {
 
-                cancelNotificationIntents(context);
+            cancelNotificationIntents(context);
 
-                AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
+            AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
 
-                if (alarmManager != null) {
+            if (alarmManager != null) {
 
-                    List<MyBenachrichtigung.BenachrichtigungsZeitpunktMitInfo> benachrichtigungen = getListZuBenachrichtigendeBenachrichtigungsZeitpunkteMitInfosSortiertNachZeitpunk(zuPostendeIntents);
-                    for(int i = 0; i< benachrichtigungen.size(); i++){
-                        MyBenachrichtigung.BenachrichtigungsZeitpunktMitInfo benachrichtigung = benachrichtigungen.get(i);
-                        String intentAction = intentActionMakeNotifications + i;
+                List<MyBenachrichtigung.BenachrichtigungsZeitpunktMitInfo> benachrichtigungen = getListZuBenachrichtigendeBenachrichtigungsZeitpunkteMitInfosSortiertNachZeitpunk(zuPostendeIntents);
+                for(int i = 0; i< benachrichtigungen.size(); i++){
+                    MyBenachrichtigung.BenachrichtigungsZeitpunktMitInfo benachrichtigung = benachrichtigungen.get(i);
+                    String intentAction = intentActionMakeNotifications + i;
 
 
-                        Intent intent = new Intent(context, myNotificationBroadCastReciever.class);
-                        intent.setAction(intentAction);
-                        intent.putExtra(context.getResources().getString(R.string.intentExtraName_CalendarId),benachrichtigung.calendarId);
-                        intent.putExtra(context.getResources().getString(R.string.intentExtraName_BenachrichtigungsId),benachrichtigung.benachrichtigungsId);
-                        intent.putExtra(context.getResources().getString(R.string.intentExtraName_ZeitPunkt),benachrichtigung.zeitpunkt);
-                        intent.putExtra(context.getResources().getString(R.string.intentExtraName_BenachrichtigungsTyp),benachrichtigung.benachrichtigungsTyp);
-                        intent.putExtra(context.getResources().getString(R.string.intentExtraName_BenachrichtigungsTypValue),benachrichtigung.benachrichtigungsTypValue);
-                        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0 ,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                    Intent intent = new Intent(context, myNotificationBroadCastReciever.class);
+                    intent.setAction(intentAction);
+                    intent.putExtra(context.getResources().getString(R.string.intentExtraName_CalendarId),benachrichtigung.calendarId);
+                    intent.putExtra(context.getResources().getString(R.string.intentExtraName_BenachrichtigungsId),benachrichtigung.benachrichtigungsId);
+                    intent.putExtra(context.getResources().getString(R.string.intentExtraName_ZeitPunkt),benachrichtigung.zeitpunkt);
+                    intent.putExtra(context.getResources().getString(R.string.intentExtraName_BenachrichtigungsTyp),benachrichtigung.benachrichtigungsTyp);
+                    intent.putExtra(context.getResources().getString(R.string.intentExtraName_BenachrichtigungsTypValue),benachrichtigung.benachrichtigungsTypValue);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0 ,intent,PendingIntent.FLAG_UPDATE_CURRENT);
 
-                        alarmManager.set(AlarmManager.RTC_WAKEUP, benachrichtigung.zeitpunkt.getTimeInMillis(),pendingIntent);
-                        Log.v(tag,"intenting in "+ (benachrichtigung.zeitpunkt.getTimeInMillis()-System.currentTimeMillis())/(1000 * 60 * 60 * 24) + " tagen wegen "+benachrichtigung.myToString());
-                        MainActivity.log(context,benachrichtigung.myToString());
-                    }
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, benachrichtigung.zeitpunkt.getTimeInMillis(),pendingIntent);
+                    Log.v(tag,"intenting in "+ (benachrichtigung.zeitpunkt.getTimeInMillis()-System.currentTimeMillis())/(1000 * 60 * 60 * 24) + " tagen wegen "+benachrichtigung.myToString());
+                    MainActivity.log(context,benachrichtigung.myToString());
                 }
-                else{
-                    Log.e(tag,"alarmManager == null");
-                    Toast.makeText(context,"konnte keine zukünftigen benachrichtigungen posten deswegen werden die wahrscheinlich nicht erscheinen", Toast.LENGTH_LONG).show();
-                }
-
             }
+            else{
+                Log.e(tag,"alarmManager == null");
+                Toast.makeText(context,"konnte keine zukünftigen benachrichtigungen posten deswegen werden die wahrscheinlich nicht erscheinen", Toast.LENGTH_LONG).show();
+            }
+
         });
         thread.start();
 
@@ -302,12 +297,7 @@ public class myNotificationBroadCastReciever extends BroadcastReceiver {
             returnList.addAll(MainActivity.myAngezeigteCalendarList.get(i).getListBenachrichtigungsZeitpunktMitInfos());
         }
 
-        Collections.sort(returnList, new Comparator<MyBenachrichtigung.BenachrichtigungsZeitpunktMitInfo>() {
-            @Override
-            public int compare(MyBenachrichtigung.BenachrichtigungsZeitpunktMitInfo o1, MyBenachrichtigung.BenachrichtigungsZeitpunktMitInfo o2) {
-                return Long.compare(o1.zeitpunkt.getTimeInMillis(), o2.zeitpunkt.getTimeInMillis());
-            }
-        });
+        returnList.sort((o1, o2) -> Long.compare(o1.zeitpunkt.getTimeInMillis(), o2.zeitpunkt.getTimeInMillis()));
 
         return returnList;
     }

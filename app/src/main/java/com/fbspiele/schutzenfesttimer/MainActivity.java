@@ -6,8 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.fbspiele.schutzenfesttimer.ui.main.PlaceholderFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.fragment.app.Fragment;
@@ -18,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import com.fbspiele.schutzenfesttimer.ui.main.SectionsPagerAdapter;
@@ -27,12 +24,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
-
-import static java.util.Calendar.YEAR;
 import static java.util.Calendar.getInstance;
 
 public class MainActivity extends AppCompatActivity {
@@ -86,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         if(myCalendarList.size()==0){
             Toast.makeText(this, "anscheinend hast du alle events gelöscht (oder ich habs verkackt beim programmieren), deswegen resette die app jetzt wieder alle events",Toast.LENGTH_LONG).show();
             resetMyCalendarList(this);
-        };
+        }
 
         /*
         if(myStandardBenachrichtigungList==null){
@@ -118,12 +110,9 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(updateTimes,1000);
 
 
-        findViewById(R.id.settings).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent_settings = new Intent(getApplicationContext(), SettingsActivity.class);
-                startActivity(intent_settings);
-            }
+        findViewById(R.id.settings).setOnClickListener(v -> {
+            Intent intent_settings = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(intent_settings);
         });
 
 
@@ -141,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
     //die schlafenzeit (tageswechselzeit) lässt sich noch nicht einstellen
     //quick settings tile
 
-    //TODO hier weitermachen
+    //TODO
     // jahre monate wochen einbauen
     // unterscheiden zwischen standardnotifications und standardnotifications für individuelle events
     //TODO bergfest für schüüs
@@ -443,79 +432,72 @@ public class MainActivity extends AppCompatActivity {
 
     public static void resortMyCalendarList(){
         final long jetzt = Calendar.getInstance().getTimeInMillis();
-        Collections.sort(myCalendarList, new Comparator<MyCalendar>() {
-            @Override
-            public int compare(MyCalendar o1, MyCalendar o2) {
-                long o1Anf = o1.calendarAnfang.getTimeInMillis();
-                long o1End = o1.calendarEnde.getTimeInMillis();
-                long o2Anf = o2.calendarAnfang.getTimeInMillis();
-                long o2End = o2.calendarEnde.getTimeInMillis();
+        myCalendarList.sort((o1, o2) -> {
+            long o1Anf = o1.calendarAnfang.getTimeInMillis();
+            long o1End = o1.calendarEnde.getTimeInMillis();
+            long o2Anf = o2.calendarAnfang.getTimeInMillis();
+            long o2End = o2.calendarEnde.getTimeInMillis();
 
-                //wenn o1 eher anfängt und endet
-                // o1Anf    o1End                 o2Anf    o2End
-                if(o1Anf < o2Anf && o1End < o2End){
-                    //Log.w(tag,o1.getName()+ " ("+getSchonesDatumPlusZeit(o1.calendarAnfang)+ ")"+" ganz vor "+o2.getName() + " ("+getSchonesDatumPlusZeit(o2.calendarAnfang)+ ")"+" typ 1");
+            //wenn o1 eher anfängt und endet
+            // o1Anf    o1End                 o2Anf    o2End
+            if (o1Anf < o2Anf && o1End < o2End) {
+                //Log.w(tag,o1.getName()+ " ("+getSchonesDatumPlusZeit(o1.calendarAnfang)+ ")"+" ganz vor "+o2.getName() + " ("+getSchonesDatumPlusZeit(o2.calendarAnfang)+ ")"+" typ 1");
+                return -1;
+            }
+            //wenn o1 später anfängt und endet
+            // o2Anf    o2End                 o1Anf    o1End
+            if (o1Anf > o2Anf && o1End > o2End) {
+                //Log.w(tag,o2.getName()+" ganz vor "+o1.getName() + " typ 2");
+                return 1;
+            }
+
+            //wenn o1 anfängt dann fängt o2 an dann hört o1 auf dann hört o2 auf is in wenn o1 eher anfängt und endet drin
+
+
+            //wenn 2 innerhalb von 1 liegt dann kommts drauf an ob 2 in der zukunft oder vergangenheit liegt
+            if (o1Anf < o2Anf && o1End > o2End) {
+                //Log.w(tag,o2.getName()+" in "+o1.getName()+" typ 1");
+                //wenn 2 in zukunft dann erst 1 (weils ja eher anfängt oder schon angefangen hat)
+                //              o1Anf       o2Anf       o2End       o1End
+                if (o2Anf > jetzt) {
                     return -1;
-                }
-                //wenn o1 später anfängt und endet
-                // o2Anf    o2End                 o1Anf    o1End
-                if(o1Anf > o2Anf && o1End > o2End){
-                    //Log.w(tag,o2.getName()+" ganz vor "+o1.getName() + " typ 2");
+                } else if (o2End < jetzt) {
+                    return 1;
+                } else {
+                    //dann müsste ja jetzt folgendes sein
+                    //              o1Anf       o2Anf       jetzt       o2End       o1End
+                    //des heißt o2 läuft also is des wichtiger da kürzer also weiter "links"
                     return 1;
                 }
-
-                //wenn o1 anfängt dann fängt o2 an dann hört o1 auf dann hört o2 auf is in wenn o1 eher anfängt und endet drin
-
-
-                //wenn 2 innerhalb von 1 liegt dann kommts drauf an ob 2 in der zukunft oder vergangenheit liegt
-                if(o1Anf < o2Anf && o1End > o2End){
-                    //Log.w(tag,o2.getName()+" in "+o1.getName()+" typ 1");
-                    //wenn 2 in zukunft dann erst 1 (weils ja eher anfängt oder schon angefangen hat)
-                    //              o1Anf       o2Anf       o2End       o1End
-                    if(o2Anf > jetzt){
-                        return -1;
-                    }
-                    else if(o2End < jetzt){
-                        return 1;
-                    }
-                    else {
-                        //dann müsste ja jetzt folgendes sein
-                        //              o1Anf       o2Anf       jetzt       o2End       o1End
-                        //des heißt o2 läuft also is des wichtiger da kürzer also weiter "links"
-                        return 1;
-                    }
-                }
-
-                //andersrum andersrum
-                if(o1Anf > o2Anf && o1End < o2End){
-                    //Log.w(tag,o1.getName()+" in "+o2.getName() + " typ 2");
-                    //              o2Anf       o1Anf       o1End       o2End
-                    //wenn 1 in zukunft dann erst 2 (weils ja eher anfängt oder schon angefangen hat)
-                    if(o1Anf > jetzt){
-                        return 1;
-                    }
-                    else if(o1End < jetzt){
-                        return -1;
-                    }
-                    else {
-                        //dann müsste ja jetzt folgendes sein
-                        //              o2Anf       o1Anf       jetzt       o1End       o2End
-                        //des heißt o1 läuft also is des wichtiger da kürzer also weiter "links"
-                        return -1;
-                    }
-                }
-
-
-                //wenn eins der beiden enden eher is als der anfang (was ja kein sinn macht dann einfach den durchschnitt vergleichen (weil was sonst))
-                if(o1Anf>o1End||o2Anf>o2End){
-                    long o1AvgMal2 = o1Anf+o1End;
-                    long o2AvgMal2 = o2Anf+o2End;
-                    return Long.compare(o1AvgMal2, o2AvgMal2);
-                }
-
-                Log.e(tag, "MyCalendar comparator case nicht behandelt zwischen "+o1.getName()+" und "+o2.getName());
-                return 0;
             }
+
+            //andersrum andersrum
+            if (o1Anf > o2Anf && o1End < o2End) {
+                //Log.w(tag,o1.getName()+" in "+o2.getName() + " typ 2");
+                //              o2Anf       o1Anf       o1End       o2End
+                //wenn 1 in zukunft dann erst 2 (weils ja eher anfängt oder schon angefangen hat)
+                if (o1Anf > jetzt) {
+                    return 1;
+                } else if (o1End < jetzt) {
+                    return -1;
+                } else {
+                    //dann müsste ja jetzt folgendes sein
+                    //              o2Anf       o1Anf       jetzt       o1End       o2End
+                    //des heißt o1 läuft also is des wichtiger da kürzer also weiter "links"
+                    return -1;
+                }
+            }
+
+
+            //wenn eins der beiden enden eher is als der anfang (was ja kein sinn macht dann einfach den durchschnitt vergleichen (weil was sonst))
+            if (o1Anf > o1End || o2Anf > o2End) {
+                long o1AvgMal2 = o1Anf + o1End;
+                long o2AvgMal2 = o2Anf + o2End;
+                return Long.compare(o1AvgMal2, o2AvgMal2);
+            }
+
+            Log.e(tag, "MyCalendar comparator case nicht behandelt zwischen " + o1.getName() + " und " + o2.getName());
+            return 0;
         });
 
     }
